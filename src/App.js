@@ -29,12 +29,14 @@ function App() {
     }
 ] 
   return (
-    <div className="app">
-      <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
-      <Menu navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
-      <Intro />
-      {/* <Experience cardInfo={cardInfo}/> */}
-    </div>
+    <>
+        <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
+        <Menu navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
+      <div className="app">
+        <Intro />
+        <Experience cardInfo={cardInfo}/>
+      </div>
+    </>
   );
 }
 

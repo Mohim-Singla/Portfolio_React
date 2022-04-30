@@ -5,7 +5,7 @@
     height: 70%;
     flex-wrap: wrap;
     .card {
-      background-color: #fff;
+      background-color: rgba(48, 19, 60, 0.676);
       max-width: 360px;
       display: flex;
       flex-direction: column;
@@ -13,6 +13,7 @@
       border-radius: 2rem;
       box-shadow: 0px 1rem 1.5rem rgba(0,0,0,0.5);
       .banner {
+        background-color: aliceblue;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -28,10 +29,13 @@
         text-align: center;
         padding: 0 2rem 0.5rem;
         margin-top: 2px;
-        color: #282c34;
+        // color: #282c34;
+        color: #efb10a;
       }
       .title {
-        color: #848484;
+        //color: #848484;
+        // color: #e8a200;
+        color: #fff;
         font-size: 0.85rem;
         text-align: center;
         padding: 0 2rem 0.4rem;
