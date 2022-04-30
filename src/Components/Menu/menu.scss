@@ -1,0 +1,31 @@
+.menuAfterClick{
+    //display: none;
+    transition: 0.7s ease;
+    width: 70%;
+    height: -webkit-calc(100% - 10%);
+    // background-color: white;
+    color: rgb(230, 105, 22);
+    position: fixed;
+    top: 10%;
+    right: -70%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .listWrapper{
+        list-style-type: none;
+        font-size: 150%;
+        font-weight: 700;
+        width: 30%;
+        font-family: 'Comic Neue', cursive;
+    }
+    
+
+    &.open{
+        transition: 0.89s ease;
+        right: 0;
+        background-color: rgb(48, 19, 60);
+    }
+
+}
