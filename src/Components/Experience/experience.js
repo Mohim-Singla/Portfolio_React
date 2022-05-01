@@ -7,7 +7,7 @@ export default function Experience({cardInfo}) {
     <div className='Experience'>
       <div className="expWrapper">
         <div className="expHeading">
-          <p>&#60;Experience &#47;&#62;</p>
+          <h1 class="heading">&#60;<span>Exp</span>erience &#47;&#62;</h1>
         </div>
         <ExperienceItems cardInfo={cardInfo} />
       </div>
