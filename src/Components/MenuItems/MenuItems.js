@@ -1,9 +1,7 @@
 import React from 'react'
 import './MenuItems.scss'
-export default function MenuItems() {
-  const items = ["Intro", "Experience", "Skills", "Projects", "Contact"];
-
-
+export default function MenuItems({items}) {
+  
   return (
     <>
     {items.map((item) => (

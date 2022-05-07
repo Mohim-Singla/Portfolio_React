@@ -37,6 +37,7 @@ function App() {
         <Intro />
         <Experience cardInfo={cardInfo}/>
         <Skills />
+        {/* <Projects /> */}
       </div>
     </>
   );

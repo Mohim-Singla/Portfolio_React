@@ -1,5 +1,5 @@
 .skills{
-    background-image: linear-gradient(45deg, rgba(39, 37, 37, 0.82), rgba(0, 0, 0, 1));
+    background-image: linear-gradient(25deg, rgba(39, 37, 37, 0.82), rgba(0, 0, 0, 1));
     .heading{
         text-align: center;
         font-size: 6vw;
@@ -27,7 +27,7 @@
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.7);
         border-radius: .5rem;
         background: #1a1a1a;
-        //width: 25%;
+        max-width: 30%;
         flex: 1;
         // align-self: stretch;
         &:hover{

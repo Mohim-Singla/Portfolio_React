@@ -3,6 +3,7 @@ import './menu.scss'
 import MenuItems from '../MenuItems/MenuItems'
 
 export default function Menu({navbarOpen, setNavbarOpen}) {
+  const items = ["Intro", "Experience", "Skills", "Projects", "Contact"];
   return (
     <div className={navbarOpen ? "menuAfterClick open" : "menuAfterClick" }>
         <ul className='listWrapper'>
@@ -11,7 +12,7 @@ export default function Menu({navbarOpen, setNavbarOpen}) {
             <li className='listItems'><a href='#'>Skills</a></li>
             <li className='listItems'><a href='#'>Projects</a></li>
             <li className='listItems'><a href='#'>Contact</a></li> */}
-            <MenuItems />
+            <MenuItems items={items}/>
         </ul>
     </div>
   )

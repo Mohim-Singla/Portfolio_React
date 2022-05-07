@@ -27,6 +27,10 @@ export default function Skills() {
           <h3>javascript</h3>
         </div>
         <div class="box">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" />  
+          <h3>Git</h3>
+        </div>
+        <div class="box">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" />
           <h3>Docker</h3>
         </div>
