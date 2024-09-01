@@ -1,10 +1,8 @@
 import React, { useState } from "react"
 import './app.scss'
 import Header from "./Components/Header/header";
-import Intro from "./Components/Intro/intro"
-import Experience from "./Components/Experience/experience";
-import Menu from "./Components/Menu/Menu";
-import Skills from "./Components/Skills/skills";
+import Intro from "./Components/Intro/intro";
+
 function App() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   let cardInfo = [
@@ -32,11 +30,11 @@ function App() {
   return (
     <>
         <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
-        <Menu navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
+        {/* <Menu navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} /> */}
       <div className="app">
         <Intro />
-        <Experience cardInfo={cardInfo}/>
-        <Skills />
+        {/* <Experience cardInfo={cardInfo}/>
+        <Skills /> */}
         {/* <Projects /> */}
       </div>
     </>

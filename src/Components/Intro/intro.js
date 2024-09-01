@@ -8,7 +8,7 @@ export default function Intro() {
           <img src={momo} alt="momo"></img>
         </div>
         <div className='introText'>
-          <p>"Keep your Thoughts high above the Sky, Keeping your Foot on the Ground"</p>
+          <p>"Keep your thoughts high above the SKY, keeping your Foot on the Ground."</p>
         </div>
       </div>
     </div>

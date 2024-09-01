@@ -1,10 +1,6 @@
 import React from 'react'
 import "./header.scss"
 export default function Header({navbarOpen, setNavbarOpen}) {
-    // const logo=require("./name_logo.jpg");
-  const navbarState = () => {
-    setNavbarOpen(!navbarOpen);
-  }
   return (
     <div className='parent'>
 
@@ -17,7 +13,7 @@ export default function Header({navbarOpen, setNavbarOpen}) {
             <p className='headerName'>Mohim Singla</p>
         </div>
         <div className='headerItems'>
-          <div className='hamburger' onClick={navbarState}>
+          <div className='hamburger'>
             <span className='line1'></span>
             <span className='line2'></span>
             <span className='line3'></span>
