@@ -52,7 +52,7 @@ const skills = [
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
         altText: "jira",
-        title: "jira"
+        title: "Jira"
     },
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
@@ -67,32 +67,32 @@ const skills = [
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg",
         altText: "sequelize ORM",
-        title: "sequelize ORM"
+        title: "Sequelize ORM"
     },
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
         altText: "mongodb",
-        title: "mongodb"
+        title: "MongodDB"
     },
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg",
         altText: "mongoose ODM",
-        title: "mongoose ODM"
+        title: "Mongoose ODM"
     },
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg",
         altText: "jenkins",
-        title: "jenkins"
+        title: "Jenkins"
     },
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
         altText: "azure",
-        title: "azure"
+        title: "Azure"
     },
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
         altText: "amazonwebservices",
-        title: "amazonwebservices"
+        title: "AWS"
     },
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cucumber/cucumber-plain-wordmark.svg",

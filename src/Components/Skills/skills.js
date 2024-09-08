@@ -4,7 +4,7 @@ import SkillBox from "./SkillBox/skillBox";
 export default function Skills({ skills }) {
 
   return (
-    <div className="bg-gradient-to-br from-[#000] to-[#272525d2] p-0">
+    <div className="bg-gradient-to-br from-[#000] to-[#272525d2] pb-6">
       <h1 className="text-center text-6xl text-white mb-12 font-cursive">
         &#60;<span className="text-[#efb10a]">My</span> Skills &#47;&#62;
       </h1>
