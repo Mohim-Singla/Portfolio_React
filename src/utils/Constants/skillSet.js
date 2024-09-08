@@ -72,7 +72,7 @@ const skills = [
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
         altText: "mongodb",
-        title: "MongodDB"
+        title: "MongoDB"
     },
     {
         imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg",
