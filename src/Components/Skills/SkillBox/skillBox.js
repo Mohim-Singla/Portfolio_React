@@ -1,4 +1,3 @@
-// SkillBox.js
 import React from 'react';
 
 const SkillBox = ({ imageSrc, altText, title }) => {

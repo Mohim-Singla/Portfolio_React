@@ -1,6 +1,5 @@
-// Skills.js
 import React from "react";
-import SkillBox from "./SkillBox/skillBox"; // Import the new SkillBox component
+import SkillBox from "./SkillBox/skillBox";
 
 export default function Skills({ skills }) {
 

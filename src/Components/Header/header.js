@@ -1,5 +1,5 @@
 import React from 'react';
-import './header.css'; // You can keep the SCSS file for custom styles if needed
+import './header.css';
 
 export default function Header({ navbarOpen, setNavbarOpen }) {
   return (
