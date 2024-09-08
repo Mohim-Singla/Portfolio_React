@@ -1,26 +1,24 @@
-import React from 'react'
-import "./header.scss"
-export default function Header({navbarOpen, setNavbarOpen}) {
-  return (
-    <div className='parent'>
+import React from 'react';
+import './header.css'; // You can keep the SCSS file for custom styles if needed
 
-    <div className={navbarOpen ? 'header menuOpen' : 'header'} id='header'>
-      <div className='wrapper'>
-        <div className='headerItems'>
-            <p className='headerLogo'>&#60;Portfolio &#47;&#62;</p>
+export default function Header({ navbarOpen, setNavbarOpen }) {
+  return (
+    <div className={`fixed top-0 w-full ${navbarOpen ? 'bg-purple-800 text-orange-500' : 'bg-black text-white'} transition-colors duration-1000 z-30`} id='header'>
+      <div className='flex items-center justify-between h-16 px-4'>
+        <div className='flex items-center'>
+          <p className='text-2xl font-extrabold font-Comic-Neue pl-2'>&#60;Portfolio &#47;&#62;</p>
         </div>
-        <div className='headerItems'>
-            <p className='headerName'>Mohim Singla</p>
+        <div className='flex items-center'>
+          <p className='text-2xl font-extrabold font-Ms-Madi'>Mohim Singla</p>
         </div>
-        <div className='headerItems'>
-          <div className='hamburger'>
-            <span className='line1'></span>
-            <span className='line2'></span>
-            <span className='line3'></span>
+        <div className='flex items-center'>
+          <div className='flex flex-col items-center cursor-pointer'>
+            <span className={`block w-8 h-0.5 bg-white transition-colors duration-300 ${navbarOpen ? 'bg-orange-500' : ''}`}></span>
+            <span className={`block w-8 h-0.5 bg-white mt-1 transition-colors duration-300 ${navbarOpen ? 'bg-orange-500' : ''}`}></span>
+            <span className={`block w-8 h-0.5 bg-white mt-1 transition-colors duration-300 ${navbarOpen ? 'bg-orange-500' : ''}`}></span>
           </div>
         </div>
       </div>
     </div>
-    </div>
-  )
+  );
 }

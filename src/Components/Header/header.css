@@ -1,0 +1,10 @@
+/* In your global CSS file or tailwind.css */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Ms+Madi&display=swap');
+
+.font-Comic-Neue {
+  font-family: 'Comic Neue', cursive;
+}
+
+.font-Ms-Madi {
+  font-family: 'Ms Madi', cursive;
+}
