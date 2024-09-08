@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
-      <div className="flex flex-col min-h-screen max-h-screen bg-black text-white pt-16">
+      <div className="flex flex-col min-h-screen max-h-screen bg-black text-white pt-10">
         <div className="flex-1">
           <Intro />
           <Skills skills={utils.Constants.SkillSet} />
