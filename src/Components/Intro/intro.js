@@ -13,7 +13,7 @@ export default function Intro({ onButtonClick }) {
           <img
             src={profilePhoto}
             alt="Mohim Singla"
-            className="max-h-full max-w-full w-auto h-auto object-contain block filter grayscale hover:grayscale-0 transition-all duration-500"
+            className="max-h-full max-w-full w-auto h-auto object-contain block"
             style={{ marginBottom: 0, display: 'block' }}
           />
         </div>
