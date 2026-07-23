@@ -78,7 +78,7 @@ const skills = [
     title: "MongoDB"
   },
   {
-    imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    imageSrc: "https://api.iconify.design/logos:aws-documentdb.svg",
     altText: "DocumentDB",
     title: "DocumentDB"
   },
@@ -114,17 +114,17 @@ const skills = [
     title: "Azure"
   },
   {
-    imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    imageSrc: "https://api.iconify.design/logos:aws-s3.svg",
     altText: "S3",
     title: "S3"
   },
   {
-    imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    imageSrc: "https://api.iconify.design/logos:aws-sqs.svg",
     altText: "SQS",
     title: "SQS"
   },
   {
-    imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg",
+    imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original-wordmark.svg",
     altText: "Kafka",
     title: "Kafka"
   },
