@@ -5,7 +5,8 @@ export default function Header({ navbarOpen, setNavbarOpen }) {
   const navItems = [
     { label: 'Home', href: '#Intro' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Experience', href: '#experience' }
+    { label: 'Experience', href: '#experience' },
+    { label: 'About & Contact', href: '#about' }
   ];
 
   const handleNavClick = (e, href) => {

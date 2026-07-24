@@ -3,6 +3,7 @@ import Header from './Components/Header/header';
 import Intro from './Components/Intro/intro';
 import Skills from './Components/Skills/skills';
 import Timeline from './Components/Timeline/timeline';
+import Contact from './Components/Contact/contact';
 import utils from './utils';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Intro />
         <Skills skills={utils.Constants.SkillSet} />
         <Timeline timelineData={utils.Constants.TimelineData} />
+        <Contact />
       </div>
     </>
   );
