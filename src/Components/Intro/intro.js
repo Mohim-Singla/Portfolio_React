@@ -5,7 +5,7 @@ import profilePhoto from './mohim2.png';
 export default function Intro({ onButtonClick }) {
   return (
     <div
-      className="bg-gradient-to-t from-[#272525d2] to-[#000] w-full text-white flex flex-col md:flex-row items-center md:items-end justify-between h-[calc(100vh-4rem)] px-4 sm:px-8 pt-0 pb-0 relative overflow-hidden gap-1 sm:gap-4 md:gap-12"
+      className="bg-gradient-to-t from-[#272525d2] to-[#000] w-full text-white flex flex-col md:flex-row items-center md:items-end justify-between h-[calc(100vh-4rem)] px-4 sm:px-8 pt-0 pb-0 relative overflow-hidden gap-1 sm:gap-4 md:gap-12 scroll-mt-16"
       id="Intro"
     >
       <div className="w-full h-[65vh] md:h-full md:w-1/2 flex items-end justify-center pt-0 overflow-hidden">
