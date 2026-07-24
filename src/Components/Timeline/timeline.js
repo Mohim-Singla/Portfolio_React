@@ -2,22 +2,23 @@ import React, { useState, useEffect, useRef } from 'react';
 
 export default function Timeline({ timelineData }) {
   const [expandedId, setExpandedId] = useState(null);
-  const containerRef = useRef(null);
+  const activeCardRef = useRef(null);
 
-  const toggleExpand = (id) => {
+  const toggleExpand = (id, e) => {
+    if (e) e.stopPropagation();
     setExpandedId(prev => (prev === id ? null : id));
   };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (containerRef.current && !containerRef.current.contains(event.target)) {
+      if (activeCardRef.current && !activeCardRef.current.contains(event.target)) {
         setExpandedId(null);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
@@ -26,17 +27,16 @@ export default function Timeline({ timelineData }) {
   // Peak Y (maximum height) = 177.5 at X = 100, 500, 900
   // Trough Y (minimum height) = 272.5 at X = 300, 700
   const points = [
-    { x: 100, y: 177.5, isPeak: true },
-    { x: 300, y: 272.5, isPeak: false },
-    { x: 500, y: 177.5, isPeak: true },
-    { x: 700, y: 272.5, isPeak: false },
-    { x: 900, y: 177.5, isPeak: true },
+    { x: 100, y: 180, isPeak: true },
+    { x: 300, y: 260, isPeak: false },
+    { x: 500, y: 180, isPeak: true },
+    { x: 700, y: 260, isPeak: false },
+    { x: 900, y: 180, isPeak: true },
   ];
 
   return (
     <div
-      ref={containerRef}
-      className="bg-gradient-to-t from-[#272525d2] to-[#000] min-h-[calc(100vh-4rem)] flex flex-col justify-center px-4 sm:px-8 py-12 sm:py-16 scroll-mt-16 text-white relative overflow-hidden"
+      className="bg-gradient-to-t from-[#272525d2] to-[#000] min-h-[calc(100vh-4rem)] flex flex-col justify-center px-4 sm:px-8 pt-12 sm:pt-14 pb-12 sm:pb-14 scroll-mt-16 text-white relative overflow-hidden"
       id="experience"
     >
       {/* Evenly Balanced Ambient Glow Backdrops behind each wave crest & trough */}
@@ -68,18 +68,18 @@ export default function Timeline({ timelineData }) {
       </div>
 
       {/* Title matching existing <My Skills /> format */}
-      <h1 className="text-center text-4xl sm:text-5xl text-white mb-4 sm:mb-6 font-cursive pt-2 relative z-10">
+      <h1 className="text-center text-4xl sm:text-5xl text-white mb-6 sm:mb-8 font-cursive relative z-10">
         &#60;<span className="text-[#efb10a]">My</span> Experience &#47;&#62;
       </h1>
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* DESKTOP WAVE VIEW (lg screens and up) */}
-        <div className="hidden lg:block relative h-[520px] w-full my-2">
+        <div className="hidden lg:block relative h-[440px] w-full my-1">
           <div className="relative w-full h-full">
             {/* SVG Wave Line & Embedded Nodes */}
             <svg
               className="w-full h-full absolute inset-0 overflow-visible"
-              viewBox="0 0 1000 450"
+              viewBox="0 0 1000 440"
               preserveAspectRatio="none"
             >
               <defs>
@@ -96,7 +96,7 @@ export default function Timeline({ timelineData }) {
 
               {/* Smooth Quadratic Bezier Wave */}
               <path
-                d="M 0 225 Q 100 130, 200 225 T 400 225 T 600 225 T 800 225 T 1000 225"
+                d="M 0 220 Q 100 140, 200 220 T 400 220 T 600 220 T 800 220 T 1000 220"
                 fill="none"
                 stroke="url(#waveGrad)"
                 strokeWidth="5"
@@ -113,7 +113,7 @@ export default function Timeline({ timelineData }) {
                   <g
                     key={`node-${item.id}`}
                     className="cursor-pointer group"
-                    onClick={() => toggleExpand(item.id)}
+                    onClick={(e) => toggleExpand(item.id, e)}
                   >
                     {/* Outer Blinking & Pulsing Halo Ring */}
                     <circle cx={pt.x} cy={pt.y} r="18" fill="#efb10a" opacity="0.4">
@@ -180,25 +180,26 @@ export default function Timeline({ timelineData }) {
               const isExpanded = expandedId === item.id;
 
               const leftPercent = (pt.x / 1000) * 100;
-              const topPercent = (pt.y / 450) * 100;
+              const topPercent = (pt.y / 440) * 100;
 
               return (
                 <div
                   key={`card-${item.id}`}
+                  ref={isExpanded ? activeCardRef : null}
                   style={{
                     left: `${leftPercent}%`,
                     top: `${topPercent}%`,
                     transform: isPeak
-                      ? 'translate(-50%, -100%) translateY(-36px)'
-                      : 'translate(-50%, 0%) translateY(40px)',
+                      ? 'translate(-50%, -100%) translateY(-32px)'
+                      : 'translate(-50%, 0%) translateY(36px)',
                   }}
                   className="absolute w-52 z-20 transition-all duration-300"
                 >
                   <div
-                    onClick={() => toggleExpand(item.id)}
+                    onClick={(e) => toggleExpand(item.id, e)}
                     className={`bg-[#181616]/95 border ${
                       isExpanded
-                        ? 'border-[#efb10a] shadow-[0_0_30px_#efb10a60] bg-[#141212] max-h-[240px] overflow-y-auto'
+                        ? 'border-[#efb10a] shadow-[0_0_30px_#efb10a60] bg-[#141212] max-h-[210px] overflow-y-auto'
                         : 'border-gray-800 hover:border-[#efb10a]'
                     } rounded-xl p-4 transition-all duration-300 shadow-2xl backdrop-blur-md cursor-pointer text-center group`}
                   >
@@ -216,15 +217,19 @@ export default function Timeline({ timelineData }) {
 
                     {/* Collapsible Details */}
                     {isExpanded && (
-                      <div className="mt-2 pt-2 border-t border-gray-700/60 text-left text-[11px] text-gray-300 space-y-1 animate-fadeIn">
+                      <div className="mt-2 pt-2 pb-2 border-t border-gray-700/60 text-left text-[11px] text-gray-300 space-y-1 animate-fadeIn">
                         <p className="text-[10px] text-gray-400 italic mb-1">{item.location}</p>
-                        <ul className="list-disc list-inside space-y-1">
-                          {item.details.map((point, idx) => (
-                            <li key={idx} className="leading-relaxed">
-                              {point}
-                            </li>
-                          ))}
-                        </ul>
+                        {item.details.length > 1 ? (
+                          <ul className="list-disc list-inside space-y-1 pb-1">
+                            {item.details.map((point, idx) => (
+                              <li key={idx} className="leading-relaxed">
+                                {point}
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="leading-relaxed pb-1">{item.details[0]}</p>
+                        )}
                       </div>
                     )}
                   </div>
@@ -253,7 +258,7 @@ export default function Timeline({ timelineData }) {
                 >
                   {/* Node directly on central vertical line with blinking ping animation */}
                   <div
-                    onClick={() => toggleExpand(item.id)}
+                    onClick={(e) => toggleExpand(item.id, e)}
                     className="absolute left-4 sm:left-1/2 -translate-x-1/2 z-20 cursor-pointer group flex items-center justify-center"
                   >
                     <span className="absolute w-8 h-8 bg-[#efb10a]/40 rounded-full animate-ping group-hover:bg-[#efb10a]/60"></span>
@@ -261,9 +266,12 @@ export default function Timeline({ timelineData }) {
                   </div>
 
                   {/* Card Container */}
-                  <div className="pl-10 sm:pl-0 sm:w-1/2 sm:px-6 w-full max-w-full box-border">
+                  <div
+                    ref={isExpanded ? activeCardRef : null}
+                    className="pl-10 sm:pl-0 sm:w-1/2 sm:px-6 w-full max-w-full box-border"
+                  >
                     <div
-                      onClick={() => toggleExpand(item.id)}
+                      onClick={(e) => toggleExpand(item.id, e)}
                       className={`bg-[#1e1c1c]/90 border ${
                         isExpanded ? 'border-[#efb10a]' : 'border-gray-800'
                       } hover:border-[#efb10a] rounded-xl p-4 sm:p-5 transition-all duration-300 shadow-xl backdrop-blur-md cursor-pointer group w-full box-border`}
@@ -287,13 +295,17 @@ export default function Timeline({ timelineData }) {
                       {/* Collapsible Details */}
                       {isExpanded && (
                         <div className="mt-3 pt-3 border-t border-gray-700/60 text-xs text-gray-300 space-y-2 animate-fadeIn">
-                          <ul className="list-disc list-inside space-y-1.5">
-                            {item.details.map((point, idx) => (
-                              <li key={idx} className="leading-relaxed">
-                                {point}
-                              </li>
-                            ))}
-                          </ul>
+                          {item.details.length > 1 ? (
+                            <ul className="list-disc list-inside space-y-1.5">
+                              {item.details.map((point, idx) => (
+                                <li key={idx} className="leading-relaxed">
+                                  {point}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p className="leading-relaxed">{item.details[0]}</p>
+                          )}
                         </div>
                       )}
                     </div>
