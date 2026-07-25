@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Portfolio_React/static/css/main.04d5e24a.css",
+    "main.js": "/Portfolio_React/static/js/main.614ababc.js",
+    "static/media/mohim2.png": "/Portfolio_React/static/media/mohim2.7ba1d4ad52c87432c347.png",
+    "static/media/image.png": "/Portfolio_React/static/media/image.dafc412d152e4a51580f.png",
+    "index.html": "/Portfolio_React/index.html",
+    "main.04d5e24a.css.map": "/Portfolio_React/static/css/main.04d5e24a.css.map",
+    "main.614ababc.js.map": "/Portfolio_React/static/js/main.614ababc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04d5e24a.css",
+    "static/js/main.614ababc.js"
+  ]
+}
