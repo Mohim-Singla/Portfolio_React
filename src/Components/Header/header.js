@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.css';
 
-export default function Header({ navbarOpen, setNavbarOpen, onHomeClick }) {
+export default function Header({ navbarOpen, setNavbarOpen, onHomeClick, onNavToSection }) {
   const navItems = [
     { label: 'Home', href: '#Intro' },
     { label: 'Skills', href: '#skills' },
@@ -12,6 +12,7 @@ export default function Header({ navbarOpen, setNavbarOpen, onHomeClick }) {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setNavbarOpen && setNavbarOpen(false);
+    window.history.pushState(null, '', href);
     if (href === '#Intro') {
       if (onHomeClick) {
         onHomeClick();
@@ -19,9 +20,13 @@ export default function Header({ navbarOpen, setNavbarOpen, onHomeClick }) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else {
-      const targetElement = document.querySelector(href);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+      if (onNavToSection) {
+        onNavToSection(href);
+      } else {
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   };

@@ -1,6 +1,6 @@
 import React from 'react';
 import './contact.css';
-import profilePhoto from '../Intro/mohim2.png';
+import profilePhoto from './image.png';
 
 export default function Contact() {
   const socialLinks = [
