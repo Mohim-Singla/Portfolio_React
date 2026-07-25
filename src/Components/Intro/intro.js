@@ -19,6 +19,17 @@ export default function Intro({ onButtonClick }) {
       <div className="w-full h-[25vh] md:h-full md:w-1/2 flex items-center justify-center text-center text-2xl sm:text-4xl md:text-5xl lg:text-6xl italic font-square-peg px-2 sm:px-4 py-4 md:py-10">
         <p className="leading-snug">"Keep your thoughts high above the SKY, keeping your Foot on the Ground."</p>
       </div>
+
+      {/* Clickable Bouncing Down Arrow */}
+      <button
+        onClick={onButtonClick}
+        aria-label="Scroll to Skills"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 p-2 rounded-full text-[#efb10a] hover:text-white hover:bg-[#efb10a]/20 transition-all duration-300 animate-bounce cursor-pointer focus:outline-none"
+      >
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
     </div>
   );
 }
