@@ -240,9 +240,9 @@ export default function Timeline({ timelineData }) {
         </div>
 
         {/* MOBILE & TABLET VERTICAL VIEW (screens smaller than lg) */}
-        <div className="lg:hidden relative px-2 py-4">
+        <div className="lg:hidden relative py-4">
           {/* Vertical Central Line */}
-          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#efb10a] via-[#efb10a]/60 to-[#f59e0b] -translate-x-1/2 rounded-full shadow-[0_0_10px_#efb10a]"></div>
+          <div className="absolute left-6 sm:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#efb10a] via-[#efb10a]/60 to-[#f59e0b] -translate-x-1/2 rounded-full shadow-[0_0_10px_#efb10a]"></div>
 
           <div className="space-y-8 relative z-10">
             {timelineData.map((item, index) => {
@@ -252,23 +252,25 @@ export default function Timeline({ timelineData }) {
               return (
                 <div
                   key={item.id}
-                  className={`flex flex-col sm:flex-row items-start sm:items-center ${
-                    isEven ? 'sm:flex-row-reverse' : ''
-                  } relative`}
+                  className="relative flex flex-col sm:grid sm:grid-cols-2 items-start sm:items-center w-full"
                 >
-                  {/* Node directly on central vertical line with blinking ping animation */}
+                  {/* Node directly on central vertical line */}
                   <div
                     onClick={(e) => toggleExpand(item.id, e)}
-                    className="absolute left-4 sm:left-1/2 -translate-x-1/2 z-20 cursor-pointer group flex items-center justify-center"
+                    className="absolute left-6 sm:left-1/2 -translate-x-1/2 z-20 cursor-pointer group flex items-center justify-center top-6 sm:top-auto w-6 h-6"
                   >
-                    <span className="absolute w-8 h-8 bg-[#efb10a]/40 rounded-full animate-ping group-hover:bg-[#efb10a]/60"></span>
-                    <span className="w-5 h-5 bg-[#efb10a] rounded-full border-4 border-[#121212] shadow-[0_0_10px_#efb10a] group-hover:scale-125 transition-transform duration-300"></span>
+                    <span className="absolute w-7 h-7 bg-[#efb10a]/40 rounded-full animate-ping group-hover:bg-[#efb10a]/60"></span>
+                    <span className="w-4 h-4 bg-[#efb10a] rounded-full border-2 border-[#121212] shadow-[0_0_10px_#efb10a] group-hover:scale-125 transition-transform duration-300"></span>
                   </div>
 
                   {/* Card Container */}
                   <div
                     ref={isExpanded ? activeCardRef : null}
-                    className="pl-10 sm:pl-0 sm:w-1/2 sm:px-6 w-full max-w-full box-border"
+                    className={`w-full box-border pl-14 ${
+                      isEven
+                        ? 'sm:col-start-1 sm:row-start-1 sm:pl-0 sm:pr-8 sm:text-right'
+                        : 'sm:col-start-2 sm:row-start-1 sm:pl-8 sm:pr-0 sm:text-left'
+                    }`}
                   >
                     <div
                       onClick={(e) => toggleExpand(item.id, e)}
